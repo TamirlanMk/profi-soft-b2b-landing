@@ -1,0 +1,10 @@
+@import "fonts.pcss";
+
+@import "tailwindcss/base";
+@import "base.pcss";
+
+@import "tailwindcss/components";
+@import "./components/index.pcss";
+
+@import "tailwindcss/utilities";
+

@@ -1,0 +1,60 @@
+.about {
+    @apply pt-4 pb-11 bg-gray-lighter;
+
+    &__title {
+        @apply font-bold font-primary-display text-xl sm:text-[1.6rem] xl:text-[2rem] sm:leading-9 uppercase mb-[17px];
+    }
+
+    &__description {
+        @apply font-primary-text text-sm sm:text-xl xl:text-2xl;
+
+        &:has( + p.about__description--highlight) {
+            @apply mb-[31px];
+        }
+    }
+
+    &__description--highlight {
+        @apply bg-accent font-primary-text text-sm sm:text-[18px] xl:text-xl text-white py-[18px] px-[22px] pr-[26px] rounded-3xl rounded-bl-none mb-5 leading-6;
+    }
+
+    .business-evolution {
+        @apply p-[25px] bg-white rounded-3xl;
+
+        &__list {
+            @apply grid grid-cols-3 sm:grid-cols-6 gap-x-[6px] gap-y-[11px] sm:gap-[11px] sm:pr-14;
+        }
+
+        &__item {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 30px;
+            grid-column-gap: 0;
+            grid-row-gap: 0;
+            max-height: 115px;
+            height: 100%;
+            justify-content: space-between;
+            grid-template-areas:
+                "img"
+                "text";
+
+            & img {
+                align-self: center;
+                justify-self: center;
+                grid-area: img;
+            }
+
+            & span {
+                @apply text-center text-sm sm:text-base block font-bold font-primary-display;
+
+                margin-top: auto;
+
+                align-self: center;
+                grid-area: text;
+
+                @media (max-width: 340px) {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}

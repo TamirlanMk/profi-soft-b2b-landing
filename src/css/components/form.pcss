@@ -1,0 +1,22 @@
+.form {
+    &__input {
+        @apply font-primary-text text-base pb-[10px] bg-transparent text-white placeholder-white w-full;
+
+        border-bottom: 1px solid rgba(1, 243, 148, 0.2);
+
+        &:focus {
+            outline: none;
+            border-bottom: 1px solid rgba(1, 243, 148, 0.5);
+        }
+    }
+
+    &__submit {
+        @apply text-accent text-base bg-white px-[20px] py-[15px] text-center w-full uppercase font-secondary transition;
+
+        &:hover,
+        &:focus {
+            @apply bg-accent text-white;
+            outline: none;
+        }
+    }
+}

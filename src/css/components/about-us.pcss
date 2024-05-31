@@ -1,0 +1,51 @@
+.about-us {
+    background: #F3F3F3 url("../../assets/intro-bg.png");
+}
+
+.achievements__list {
+    @apply grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-[38px] gap-x-[8px] gap-y-4;
+
+
+    &-item {
+        @apply border-2 bg-[#f9f9f9] border-accent rounded-[8px] text-center break-words text-accent text-[7px] sm:text-[10px] uppercase font-primary-text min-h-[83px];
+
+        box-sizing: border-box;
+
+        display: grid;
+        grid-template-columns: 128px;
+        grid-template-rows: 1fr 23px;
+        grid-template-areas:
+            "content"
+            "footer";
+
+        @media (max-width: 1200px) {
+            grid-template-columns: 1fr;
+        }
+
+        &__content {
+            @apply py-[10px] pb-[8px] px-[8px] leading-[1.25em] flex items-center justify-center h-auto;
+
+            grid-area: content;
+        }
+
+        &__content.with-bitrix {
+            @apply py-[10px] pl-[22px] px-[15px] leading-[1.25em] flex items-center justify-center h-auto;
+
+            position: relative;
+
+            &::before {
+                @apply absolute top-[22px] sm:top-[17px] left-[5px] w-[14px] h-[8px] sm:w-[24px] sm:h-[15px];
+
+                content: '';
+                background: url("../../assets/24.svg") center;
+                background-size: contain;
+            }
+        }
+
+        &__footer {
+            @apply bg-accent rounded-t-[5px] py-[4px] px-[5px];
+
+            grid-area: footer;
+        }
+    }
+}

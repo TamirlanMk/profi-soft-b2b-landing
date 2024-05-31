@@ -1,0 +1,16 @@
+.implementation {
+    background: #F3F3F3 url("../../assets/intro-bg.png");
+}
+
+.implementation-process {
+    @apply bg-gray-lighter;
+
+    &__list {
+        @apply grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-4 sm:gap-x-[24px] gap-y-[30px] mt-[49px];
+
+        &-item {
+            @apply rounded-3xl bg-white relative text-[18px] font-primary-text leading-6
+            pt-[25px] pl-[15px] pr-[25px] pb-[43px];
+        }
+    }
+}

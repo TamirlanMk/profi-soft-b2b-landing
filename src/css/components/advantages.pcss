@@ -1,0 +1,35 @@
+.advantages {
+    gap: 5px;
+
+    &__item {
+        @apply w-full sm:w-4/12 gap-x-[6px] xl:gap-x-[8px] gap-y-[6px] xl:gap-y-[10px];
+
+        background: #fff;
+
+        padding: 16px;
+
+        display: grid;
+        grid-template-columns: 30px repeat(1, 1fr);
+        grid-template-areas:
+          "icon title"
+          "none content";
+    }
+
+    &__icon {
+        align-self: center;
+        grid-area: icon;
+    }
+
+    &__title {
+        @apply text-sm xl:text-base;
+
+        align-self: center;
+        grid-area: title;
+    }
+
+    &__text {
+        @apply font-primary-text leading-[1.125rem] text-sm xl:text-base;
+
+        grid-area: content;
+    }
+}

@@ -1,0 +1,77 @@
+/** * {
+    outline: solid 2px red;
+}
+**/
+img {
+    moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.section__title {
+    @apply font-bold font-primary-display text-xl sm:text-[1.6rem] xl:text-[2rem] sm:leading-9 uppercase mb-[17px];
+}
+
+.section__text {
+    @apply mt-[30px] font-primary-text text-base sm:text-xl xl:text-2xl;
+
+    line-height: 1.25em;
+}
+
+.list-lightning {
+    li {
+        @apply text-base md:text-[18px] xl:text-xl font-primary-text;
+
+        line-height: 1.20em;
+
+        position: relative;
+
+        padding-left: 32px;
+        margin-bottom: 35px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &::before {
+            content: url("../assets/lightning-sm.svg");
+            position: absolute;
+            top: 3px;
+            left: 1px;
+        }
+    }
+}
+
+.list-flags {
+    li {
+        @apply text-base md:text-[18px] xl:text-xl font-primary-text;
+
+        position: relative;
+
+        padding-left: 42px;
+        margin-bottom: 30px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &::before {
+            content: url("../assets/flag.svg");
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+}
+
+.list-dotted {
+    @apply list-disc;
+
+    li {
+        @apply text-base md:text-[18px] xl:text-xl font-primary-text;
+
+        margin-left: 31px;
+    }
+}
