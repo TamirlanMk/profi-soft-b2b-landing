@@ -1,56 +1,55 @@
 .header {
+  @apply max-h-[70px] bg-[#131313] py-[6px] md:py-[15px];
 
-    @apply max-h-[70px] py-[6px] md:py-[15px] bg-[#131313];
+  &__brand {
+    @apply mr-[46px];
 
-    &__brand {
-        @apply mr-[46px];
-
-        img {
-            @apply h-[28px] md:h-auto;
-        }
+    img {
+      @apply h-[28px] md:h-auto;
     }
+  }
 
-    .container {
-        @apply flex items-center justify-between;
-    }
+  .container {
+    @apply flex items-center justify-between;
+  }
 }
 
 .menu {
-    &.active {
-        .menu__list {
-            @media (max-width: 1023px) {
-                @apply max-h-[3000px] opacity-100 visible;
-            }
+  &.active {
+    .menu__list {
+      @media (max-width: 1023px) {
+        @apply visible max-h-[3000px] opacity-100;
+      }
+    }
+  }
+
+  &__burger {
+    @apply block cursor-pointer lg:hidden;
+  }
+
+  &__list {
+    @apply flex items-center gap-[20px] lg:gap-[26px] xl:gap-[61px];
+
+    @media (max-width: 1023px) {
+      @apply invisible absolute left-0 right-0 z-20 max-h-[0px] w-full flex-col items-center justify-center bg-[#131313] py-[20px] opacity-0 transition-[200ms];
+
+      top: calc(100%);
+
+      li {
+        @apply w-full text-center;
+
+        a {
+          @apply inline-block;
         }
+      }
     }
+  }
 
-    &__burger {
-        @apply block lg:hidden
-    }
+  &__link {
+    @apply font-secondary text-sm uppercase text-white xl:text-base;
+  }
 
-    &__list {
-        @apply flex items-center gap-[20px] lg:gap-[26px] xl:gap-[61px];
-
-        @media (max-width: 1023px) {
-            @apply py-[20px] flex-col items-center justify-center
-            w-full absolute left-0 right-0 top-[40px] z-20 bg-[#131313]
-            max-h-[0px] opacity-0 transition-[200ms] invisible;
-
-            li {
-                @apply w-full text-center;
-
-                a {
-                    @apply inline-block;
-                }
-            }
-        }
-    }
-
-    &__link {
-        @apply text-white uppercase font-secondary text-sm xl:text-base;
-    }
-
-    &__link--rounded {
-        @apply py-[10px] px-12 border rounded-3xl hover:bg-white hover:text-[#131313] transition;
-    }
+  &__link--rounded {
+    @apply rounded-3xl border px-12 py-[10px] transition hover:bg-white hover:text-[#131313];
+  }
 }

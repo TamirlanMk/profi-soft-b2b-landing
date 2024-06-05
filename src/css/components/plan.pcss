@@ -1,7 +1,29 @@
 .plan {
-    @apply bg-gray-lighter;
-    
+    @apply bg-gray-lighter pb-[43px] pt-[70px];
+
     .list-dotted {
-        @apply mt-[20px] lg:mt-[50px]
+        @apply mt-[20px] lg:mt-[50px];
+    }
+
+    &__img {
+        @apply mt-5 flex items-start justify-center lg:mt-0;
+    }
+
+    &__content {
+        @apply grid grid-cols-1 items-center lg:grid-cols-2;
+    }
+
+    &__card {
+        @apply mt-[30px] rounded-3xl bg-white p-[30px] pr-[30px] md:pr-16;
+
+        &-text {
+            @apply font-primary-text text-[18px] text-black-dark sm:text-xl md:text-2xl;
+
+            line-height: 1.25em;
+
+            & .accent-text {
+                @apply font-primary-display font-black text-accent;
+            }
+        }
     }
 }

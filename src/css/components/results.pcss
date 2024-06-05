@@ -1,3 +1,48 @@
 .results {
-    background: #F3F3F3 url("../../assets/intro-bg.png");
+    @apply py-10 md:py-[70px];
+    background: #f3f3f3 url("../../assets/intro-bg.png");
+
+    &__list {
+        @apply mt-[50px] grid grid-cols-4 items-stretch gap-x-[10px] gap-y-[20px] md:items-end lg:grid-cols-5;
+
+        &-item {
+            @apply col-span-4 flex flex-col justify-between rounded-3xl bg-white py-[25px] pl-[19px] pr-[18px] text-center sm:col-span-2 md:col-span-1;
+
+            &__title {
+                @apply mt-[30px] font-primary-display text-xl font-black lg:text-[32px];
+            }
+
+            &__text {
+                @apply mt-4 font-primary-text text-xs text-gray-dark md:mt-0 lg:text-sm;
+            }
+
+            &:nth-child(1) {
+                @apply md:h-[398px];
+            }
+
+            &:nth-child(2) {
+                @apply md:h-[326px];
+            }
+
+            &:nth-child(3) {
+                @apply md:h-[251px];
+            }
+
+            &:nth-child(4) {
+                @apply md:h-[204px];
+            }
+
+            &--last {
+                @apply col-span-4 flex flex-col justify-between gap-y-[10px] lg:col-span-1;
+
+                .results__list-item__title--light {
+                    @apply mr-[9px] mt-0 font-primary-display text-[32px] font-black text-white;
+                }
+
+                .results__list-item__text--light {
+                    @apply font-primary-text text-sm leading-[1.25em] text-white;
+                }
+            }
+        }
+    }
 }

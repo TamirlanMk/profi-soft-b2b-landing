@@ -1,13 +1,26 @@
 .about-us {
-    background: #F3F3F3 url("../../assets/intro-bg.png");
+    @apply overflow-hidden pb-[57px] pt-10 md:pt-[70px];
+
+    background: #f3f3f3 url("../../assets/intro-bg.png");
+
+    &__inner {
+        @apply mt-[50px] grid grid-cols-1 lg:grid-cols-2;
+    }
+
+    &__content {
+        @apply rounded-t-3xl bg-white p-[30px] pr-[14px] pt-[42px] md:rounded-l-3xl md:rounded-tr-none xl:w-[595px];
+    }
+
+    &__images {
+        @apply relative flex justify-between xl:pl-[16px];
+    }
 }
 
 .achievements__list {
-    @apply grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-[38px] gap-x-[8px] gap-y-4;
-
+    @apply mt-[38px] grid grid-cols-2 gap-x-[8px] gap-y-4 lg:grid-cols-3 xl:grid-cols-4;
 
     &-item {
-        @apply border-2 bg-[#f9f9f9] border-accent rounded-[8px] text-center break-words text-accent text-[7px] sm:text-[10px] uppercase font-primary-text min-h-[83px];
+        @apply min-h-[83px] break-words rounded-[8px] border-2 border-accent bg-[#f9f9f9] text-center font-primary-text text-[7px] uppercase text-accent sm:text-[10px];
 
         box-sizing: border-box;
 
@@ -18,32 +31,32 @@
             "content"
             "footer";
 
-        @media (max-width: 1200px) {
+        @media (max-width: 1240px) {
             grid-template-columns: 1fr;
         }
 
         &__content {
-            @apply py-[10px] pb-[8px] px-[8px] leading-[1.25em] flex items-center justify-center h-auto;
+            @apply flex h-auto items-center justify-center px-[8px] py-[10px] pb-[8px] leading-[1.25em];
 
             grid-area: content;
         }
 
         &__content.with-bitrix {
-            @apply py-[10px] pl-[22px] px-[15px] leading-[1.25em] flex items-center justify-center h-auto;
+            @apply flex h-auto items-center justify-center px-[15px] py-[10px] pl-[22px] leading-[1.25em];
 
             position: relative;
 
             &::before {
-                @apply absolute top-[22px] sm:top-[17px] left-[5px] w-[14px] h-[8px] sm:w-[24px] sm:h-[15px];
+                @apply absolute left-[5px] top-[22px] h-[8px] w-[14px] sm:top-[17px] sm:h-[15px] sm:w-[24px];
 
-                content: '';
-                background: url("../../assets/24.svg") center;
+                content: "";
+                background: url("../../assets/24.svg") center no-repeat;
                 background-size: contain;
             }
         }
 
         &__footer {
-            @apply bg-accent rounded-t-[5px] py-[4px] px-[5px];
+            @apply rounded-t-[5px] bg-accent px-[5px] py-[4px];
 
             grid-area: footer;
         }

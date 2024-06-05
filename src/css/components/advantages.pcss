@@ -1,34 +1,30 @@
 .advantages {
-    gap: 5px;
+    @apply flex flex-col items-stretch gap-[5px] sm:flex-row;
 
     &__item {
-        @apply w-full sm:w-4/12 gap-x-[6px] xl:gap-x-[8px] gap-y-[6px] xl:gap-y-[10px];
-
-        background: #fff;
-
-        padding: 16px;
+        @apply w-full gap-x-[6px] gap-y-[6px] bg-white p-4 sm:w-4/12 xl:gap-x-[8px] xl:gap-y-[10px];
 
         display: grid;
         grid-template-columns: 30px repeat(1, 1fr);
         grid-template-areas:
-          "icon title"
-          "none content";
+            "icon title"
+            "none content";
     }
 
     &__icon {
-        align-self: center;
+        @apply self-center;
+
         grid-area: icon;
     }
 
     &__title {
-        @apply text-sm xl:text-base;
+        @apply self-center font-primary-display text-sm font-bold md:text-base xl:text-xl;
 
-        align-self: center;
         grid-area: title;
     }
 
     &__text {
-        @apply font-primary-text leading-[1.125rem] text-sm xl:text-base;
+        @apply font-primary-text text-sm leading-[1.125rem] xl:text-base;
 
         grid-area: content;
     }

@@ -1,16 +1,33 @@
 .implementation {
-    background: #F3F3F3 url("../../assets/intro-bg.png");
+    @apply py-10 md:py-[70px];
+
+    background: #f3f3f3 url("../../assets/intro-bg.png");
+
+    &__list {
+        @apply mt-[35px] flex flex-col items-stretch gap-[42px] sm:mt-[48px] sm:flex-row;
+
+        &-item {
+            @apply w-full rounded-3xl bg-white pb-5 pl-[30px] pr-[23px] pt-5 sm:w-6/12 sm:pt-[42px];
+        }
+    }
 }
 
 .implementation-process {
-    @apply bg-gray-lighter;
+    @apply bg-gray-lighter py-10 md:py-[70px];
 
     &__list {
-        @apply grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-4 sm:gap-x-[24px] gap-y-[30px] mt-[49px];
+        @apply mt-[25px] grid grid-cols-1 gap-x-4 gap-y-[30px] sm:mt-[49px] sm:gap-x-[24px] md:grid-cols-2 xl:grid-cols-3;
 
         &-item {
-            @apply rounded-3xl bg-white relative text-[18px] font-primary-text leading-6
-            pt-[25px] pl-[15px] pr-[25px] pb-[43px];
+            @apply relative rounded-3xl bg-white pb-[25px] pl-5 pr-[25px] pt-[25px] sm:pb-[43px] sm:pl-[15px];
+
+            &__badge {
+                @apply mb-4 inline-block rounded-3xl bg-accent px-[31px] py-[14px] font-primary-text text-sm font-black text-white sm:mb-[30px] sm:text-[18px];
+            }
+
+            &__text {
+                @apply font-primary-text text-base leading-6 sm:text-[18px];
+            }
         }
     }
 }

@@ -1,69 +1,73 @@
 .footer {
-    @apply overflow-hidden bg-[#F3F3F3];
+  @apply overflow-hidden bg-[#F3F3F3];
 
-    &__form {
-        @apply pt-[30px] px-[25px] pb-[35px] w-full md:w-[364px] lg:w-[440px] xl:w-[477px];
-        background: rgba(0, 0, 0, 0.14);
+  &__form {
+    @apply w-full px-[25px] pb-[35px] pt-[30px] md:w-[364px] lg:w-[440px] xl:w-[477px];
+    background: rgba(0, 0, 0, 0.14);
+  }
+
+  &__container {
+    @apply grid w-full items-stretch md:grid-cols-2;
+  }
+
+  &__left {
+    @apply flex justify-end md:pr-5 md:pt-[58px];
+
+    &-content {
+      @apply w-full pl-5 pr-5 md:pr-0 lg:w-[490px] lg:pl-0 xl:w-[560px];
     }
+  }
 
-    &__container {
-        @apply grid md:grid-cols-2 items-stretch w-full;
+  &__title {
+    @apply text-[18px] md:text-[1.4rem] xl:text-[2rem];
+  }
+
+  &__title,
+  &__copyright {
+    @apply mb-[31px] py-3;
+
+    position: relative;
+
+    z-index: 1;
+
+    &::after {
+      @apply right-[-20px];
+
+      content: "";
+      position: absolute;
+      display: block;
+
+      background: #ffffff;
+      z-index: -1;
+
+      height: 100%;
+      width: 200%;
+      top: 0;
+      right: -20px;
     }
+  }
 
-    &__left {
-        @apply md:pt-[58px] md:pr-5 flex justify-end;
+  &__copyright {
+    @apply mb-0 mt-[19px] pb-[23px] pt-[22px] font-secondary text-xs font-bold sm:text-sm;
 
-        &-content {
-            @apply w-full pl-5 lg:pl-0 lg:w-[490px] xl:w-[560px];
-        }
+    color: #afafaf;
+  }
+
+  .footer__info-list {
+    @apply flex flex-col gap-[12px];
+
+    li {
+      @apply items-center gap-3 sm:gap-5;
+
+      display: grid;
+      grid-template-columns: 30px 1fr;
+      grid-template-rows: 1fr;
+      gap: 0 12px;
+      grid-template-areas: "icon text";
+
+      img {
+        @apply max-w-5 sm:max-w-fit;
+      }
     }
-
-    &__title {
-        @apply text-[18px] md:text-[1.4rem] xl:text-[2rem];
-    }
-
-    &__title,
-    &__copyright {
-        @apply py-3 mb-[31px];
-
-        position: relative;
-
-        z-index: 1;
-
-        &::after {
-            @apply right-[-20px];
-
-            content: '';
-            position: absolute;
-            display: block;
-
-            background: #ffffff;
-            z-index: -1;
-
-            height: 100%;
-            width: 200%;
-            top: 0;
-            right: -20px;
-        }
-    }
-
-    &__copyright {
-        @apply mt-[19px] text-sm font-secondary font-bold mb-0 pt-[22px] pb-[23px];
-
-        color: #AFAFAF;
-    }
-
-    .footer__info-list {
-        @apply flex flex-col gap-[12px];
-
-        li {
-            @apply gap-5 items-center;
-
-            display: grid;
-            grid-template-columns: 30px 1fr;
-            grid-template-rows: 1fr;
-            gap: 0 12px;
-            grid-template-areas:"icon text";
-        }
-    }
+  }
 }

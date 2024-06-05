@@ -1,3 +1,19 @@
 .before-automation {
-    @apply bg-gray-lighter;
+    @apply bg-gray-lighter pb-[37px] pt-10 md:pt-[70px];
+
+    &__text {
+        @apply mt-4 w-full font-primary-text text-xs leading-5 sm:text-base md:w-[43%];
+    }
+
+    &__wrapper {
+        @apply mt-5 flex flex-col items-center justify-between md:-mt-14 md:flex-row;
+
+        .graph__img {
+            @apply max-w-[70%] sm:max-w-[40%] lg:max-w-[30%] xl:max-w-full;
+        }
+
+        .cicle__img {
+            @apply max-w-full sm:max-w-[70%] lg:max-w-[70%] xl:max-w-full;
+        }
+    }
 }

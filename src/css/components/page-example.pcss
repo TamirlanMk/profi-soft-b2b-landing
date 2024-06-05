@@ -1,65 +1,64 @@
 .page-example {
-    @apply bg-gray-bg overflow-hidden;
+  @apply overflow-hidden bg-gray-bg;
 
-    &__container {
-        @apply grid md:grid-cols-2 items-stretch w-full;
+  &__container {
+    @apply grid w-full items-stretch md:grid-cols-2;
+  }
+
+  &__left {
+    @apply flex justify-end pb-[40px] pt-[20px] md:pb-[68px] md:pr-5 md:pt-[58px];
+
+    &-content {
+      @apply w-full px-5 md:w-[364px] md:px-0 lg:w-[490px] xl:w-[560px];
+    }
+  }
+
+  &__right {
+    @apply relative grid justify-center px-5 py-6 md:justify-start;
+
+    & img {
+      @apply max-w-full;
+
+      z-index: 2;
+      object-fit: contain;
     }
 
-    &__left {
-        @apply pt-[20px] md:pt-[58px] pb-[40px] md:pb-[68px] md:pr-5 flex justify-end;
-
-        &-content {
-            @apply px-5 md:px-0 w-full md:w-[364px] lg:w-[490px] xl:w-[560px];
-        }
+    &::after {
+      content: url("../../assets/page-example-bg.png");
+      position: absolute;
+      right: 5px;
+      top: 100px;
+      z-index: 1;
     }
+  }
 
-    &__right {
-        @apply relative grid justify-center sm:justify-start px-5 py-6;
+  &__title {
+    @apply mb-[38px] py-3;
 
-        & img {
-            @apply max-w-full;
+    position: relative;
 
-            z-index: 2;
-            max-width: initial;
-            object-fit: contain;
-        }
+    z-index: 1;
 
-        &::after {
-            content: url("../../assets/page-example-bg.png");
-            position: absolute;
-            right: 5px;
-            top: 100px;
-            z-index: 1;
-        }
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+
+      background: #ffffff;
+      z-index: -1;
+
+      height: 100%;
+      width: 200%;
+      top: 0;
+      right: -20px;
     }
+  }
 
-    &__title {
-        @apply py-3 mb-[38px];
+  .list-dotted {
+    li {
+      @apply mb-[20px] md:mb-[34px];
 
-        position: relative;
-
-        z-index: 1;
-
-        &::after {
-            content: '';
-            position: absolute;
-            display: block;
-
-            background: #ffffff;
-            z-index: -1;
-
-            height: 100%;
-            width: 200%;
-            top: 0;
-            right: -20px;
-        }
+      line-height: 1.25em;
     }
-
-    .list-dotted {
-        li {
-            @apply mb-[20px] md:mb-[34px];
-
-            line-height: 1.25em;
-        }
-    }
+  }
 }

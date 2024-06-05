@@ -1,3 +1,21 @@
 .after-automation {
-    background: #F3F3F3 url("../../assets/intro-bg.png");
+    @apply py-10 md:py-[70px];
+
+    background: #f3f3f3 url("../../assets/intro-bg.png");
+
+    &__wrapper {
+        @apply mt-[55px] flex flex-col items-center justify-between gap-y-[40px] sm:flex-row;
+
+        .graph__img {
+            @apply max-w-full object-contain sm:max-w-[50%] md:translate-x-[5px] lg:max-w-[50%] xl:max-w-full;
+        }
+
+        .usage__img {
+            @apply max-w-full object-contain sm:max-w-[15%] sm:translate-x-[-1px] sm:translate-y-[-34%] lg:max-w-[30%] xl:max-w-full;
+        }
+
+        .cicle__img {
+            @apply max-w-full object-contain sm:max-w-[30%] sm:translate-x-[-9px] sm:translate-y-[-10%] lg:max-w-[30%] xl:max-w-full;
+        }
+    }
 }

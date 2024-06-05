@@ -2,11 +2,30 @@
     background: #f3f3f3 url("../../assets/intro-bg.png") center no-repeat;
     background-size: cover;
 
+    .container {
+        @apply pb-[50px];
+    }
+
+    &__content {
+        @apply mb-[70px] flex flex-col items-center justify-between sm:flex-row;
+
+        &-left {
+            @apply w-full pt-[50px] sm:w-5/12 sm:pt-[80px];
+        }
+
+        &-right {
+            @apply flex w-full justify-end pt-[40px] sm:-mr-4 sm:w-6/12 sm:pt-[74px];
+        }
+    }
+
     &__title {
-        @apply font-bold font-primary-display text-[2rem] xl:text-[2rem] leading-[2.8rem] sm:leading-9 uppercase mb-[17px];
+        @apply mb-[17px] font-primary-display text-[2rem] font-bold uppercase leading-[2.8rem] sm:leading-9 xl:text-[2rem];
     }
 
     &__subtitle {
         @apply font-primary-text text-xl xl:text-2xl;
+    }
+
+    &__intro {
     }
 }
